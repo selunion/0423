@@ -1,12 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>4.23 평택 투쟁 결의대회</title>
+<meta name="description" content="4월 23일 평택에서 함께 선다. OPI 상한 폐지와 투명한 성과급을 요구하는 4.23 투쟁 결의대회 안내 페이지입니다.">
+<link rel="canonical" href="https://www.xn--5h5bv6v.com/">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="4.23 평택 투쟁 결의대회">
+<meta property="og:description" content="4월 23일 평택에서 함께 선다. OPI 상한 폐지와 투명한 성과급을 요구한다.">
+<meta property="og:url" content="https://www.xn--5h5bv6v.com/">
+<meta property="og:site_name" content="4.23 평택 투쟁 결의대회">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="4.23 평택 투쟁 결의대회">
+<meta name="twitter:description" content="4월 23일 평택에서 함께 선다. OPI 상한 폐지와 투명한 성과급을 요구한다.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-height:100vh}
@@ -134,7 +152,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
         <span class="tag hot"># 성과급 정상화</span>
         <span class="tag hot"># 인재제일 경영원칙 실현</span>
       </div>
-      <a class="cta" href="https://naver.me/5t7Zs2d8" target="_blank">
+      <a class="cta" href="https://naver.me/5t7Zs2d8" target="_blank" rel="noopener noreferrer">
         <span>설문 참여하기</span><span class="arrow">→</span>
       </a>
     </div>
@@ -159,13 +177,24 @@ document.getElementById('update-time').textContent = UPDATE_TIME;
 const target = new Date('2026-04-23T13:00:00+09:00');
 function tick() {
   const d = target - new Date();
-  if (d <= 0) { ['days','hours','mins','secs'].forEach(id => document.getElementById(id).textContent = '00'); return; }
-  document.getElementById('days').textContent   = String(Math.floor(d / 86400000)).padStart(2, '0');
-  document.getElementById('hours').textContent  = String(Math.floor((d % 86400000) / 3600000)).padStart(2, '0');
-  document.getElementById('mins').textContent   = String(Math.floor((d % 3600000) / 60000)).padStart(2, '0');
-  document.getElementById('secs').textContent   = String(Math.floor((d % 60000) / 1000)).padStart(2, '0');
+  if (d <= 0) {
+    ['days','hours','mins','secs'].forEach(id => document.getElementById(id).textContent = '00');
+    return;
+  }
+  document.getElementById('days').textContent  = String(Math.floor(d / 86400000)).padStart(2, '0');
+  document.getElementById('hours').textContent = String(Math.floor((d % 86400000) / 3600000)).padStart(2, '0');
+  document.getElementById('mins').textContent  = String(Math.floor((d % 3600000) / 60000)).padStart(2, '0');
+  document.getElementById('secs').textContent  = String(Math.floor((d % 60000) / 1000)).padStart(2, '0');
 }
-tick(); setInterval(tick, 1000);
+tick();
+setInterval(tick, 1000);
 </script>
+
+<!-- Cloudflare Web Analytics: 방문 통계용. 사이트 동작 필수 아님 -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516"
+  integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=="
+  data-cf-beacon='{"version":"2024.11.0","token":"504f0a5f1ecf41ca9f7b943f054fbbed","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+  crossorigin="anonymous"></script>
+
 </body>
 </html>
