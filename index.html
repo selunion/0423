@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,49 +13,74 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
 .topbar{height:5px;background:#E8000A;position:fixed;top:0;left:0;right:0;z-index:100}
 .bgstripe{position:fixed;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 80px,rgba(232,0,10,0.03) 80px,rgba(232,0,10,0.03) 82px);pointer-events:none;z-index:0}
 .bgglow{position:fixed;top:-15%;left:-10%;width:80%;height:50%;background:radial-gradient(ellipse at 30% 40%,rgba(232,0,10,0.13) 0%,transparent 65%);pointer-events:none;z-index:0}
+
 .page{position:relative;z-index:1;padding-top:5px}
+
+/* main grid */
 .main{display:grid;grid-template-columns:1fr 1px 1fr;min-height:calc(100vh - 5px)}
 .divider{background:rgba(240,237,232,0.08)}
 .left{display:flex;flex-direction:column;justify-content:center;padding:clamp(44px,8vh,90px) clamp(32px,6vw,80px)}
 .right{display:flex;flex-direction:column;justify-content:center;padding:clamp(44px,8vh,90px) clamp(32px,6vw,80px);gap:18px}
-.org{font-size:11px;letter-spacing:0.3em;color:rgba(240,237,232,0.6);margin-bottom:16px}
-.badge{display:inline-flex;align-items:center;gap:8px;background:#E8000A;color:#fff;font-size:9px;font-weight:700;letter-spacing:0.3em;padding:5px 14px;margin-bottom:16px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);width:fit-content}
+
+/* left */
+.org{font-size:16px;letter-spacing:0.3em;color:rgba(240,237,232,0.6);margin-bottom:16px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#E8000A;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.3em;padding:5px 14px;margin-bottom:16px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);width:fit-content}
 .dot-blink{width:5px;height:5px;background:#fff;border-radius:50%;animation:blink 1s infinite}
-.date-hero{font-family:'Black Han Sans',sans-serif;font-size:clamp(72px,12vw,180px);line-height:0.85;letter-spacing:-0.03em}
+.date-hero{font-family:'Black Han Sans',sans-serif;font-size:clamp(77px,12vw,185px);line-height:0.85;letter-spacing:-0.03em}
 .red{color:#E8000A}.dim{color:rgba(240,237,232,0.12)}
 .rule{width:100%;height:2px;background:linear-gradient(90deg,#E8000A 45%,transparent);margin:16px 0 12px}
-.event-sub{font-size:clamp(13px,1.2vw,18px);color:rgba(240,237,232,0.75);letter-spacing:0.06em;margin-bottom:8px}
-.headline{font-family:'Black Han Sans',sans-serif;font-size:clamp(24px,3.8vw,60px);line-height:1.1}
+.event-sub{font-size:clamp(18px,1.5vw,23px);color:rgba(240,237,232,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.headline{font-family:'Black Han Sans',sans-serif;font-size:clamp(29px,4.2vw,65px);line-height:1.1}
 .accent{color:#FFD600}
-.sub{margin-top:14px;font-size:clamp(11px,0.9vw,13px);font-weight:300;color:rgba(240,237,232,0.45);letter-spacing:0.03em;line-height:2}
+.sub{margin-top:14px;font-size:clamp(16px,1.1vw,18px);font-weight:300;color:rgba(240,237,232,0.45);letter-spacing:0.03em;line-height:2}
 .sub strong{color:#F0EDE8;font-weight:700}
+
+/* right */
 .info-row{display:flex;border:1px solid rgba(240,237,232,0.08)}
 .info-cell{flex:1;padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:5px;border-right:1px solid rgba(240,237,232,0.08)}
 .info-cell:last-child{border-right:none}
-.lbl{font-size:13px;letter-spacing:0.3em;color:#E8000A;text-transform:uppercase;font-weight:700}
-.val{font-family:'Black Han Sans',sans-serif;font-size:clamp(18px,2.2vw,32px);text-align:center}
+.lbl{font-size:18px;letter-spacing:0.3em;color:#E8000A;text-transform:uppercase;font-weight:700}
+.val{font-family:'Black Han Sans',sans-serif;font-size:clamp(23px,2.5vw,37px);text-align:center}
 .countdown{display:flex;gap:8px;align-items:center}
 .cblock{flex:1;display:flex;flex-direction:column;align-items:center;background:rgba(240,237,232,0.03);border:1px solid rgba(240,237,232,0.08);padding:14px 0}
-.cnum{font-family:'Black Han Sans',sans-serif;font-size:clamp(24px,4vw,54px);line-height:1}
-.cunit{font-size:7px;letter-spacing:0.25em;color:rgba(240,237,232,0.28);margin-top:5px}
-.csep{font-family:'Black Han Sans',sans-serif;font-size:clamp(18px,2.5vw,36px);color:#E8000A;flex-shrink:0;margin-bottom:14px}
+.cnum{font-family:'Black Han Sans',sans-serif;font-size:clamp(29px,4.3vw,59px);line-height:1}
+.cunit{font-size:12px;letter-spacing:0.25em;color:rgba(240,237,232,0.28);margin-top:5px}
+.csep{font-family:'Black Han Sans',sans-serif;font-size:clamp(23px,2.8vw,41px);color:#E8000A;flex-shrink:0;margin-bottom:14px}
 .demands{display:flex;flex-wrap:wrap;gap:7px}
-.tag{border:1px solid rgba(232,0,10,0.35);color:rgba(240,237,232,0.6);font-size:9px;letter-spacing:0.07em;padding:5px 11px;background:rgba(232,0,10,0.04)}
+.tag{border:1px solid rgba(232,0,10,0.35);color:rgba(240,237,232,0.6);font-size:14px;letter-spacing:0.07em;padding:5px 11px;background:rgba(232,0,10,0.04)}
 .tag.hot{background:rgba(232,0,10,0.14);color:#F0EDE8;border-color:#E8000A}
-.cta{background:#E8000A;color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:12px;font-family:'Black Han Sans',sans-serif;font-size:clamp(14px,1.5vw,20px);letter-spacing:0.06em;clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);cursor:pointer;text-decoration:none;transition:opacity 0.2s}
+.cta{background:#E8000A;color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:12px;font-family:'Black Han Sans',sans-serif;font-size:clamp(19px,1.8vw,25px);letter-spacing:0.06em;clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);cursor:pointer;text-decoration:none;transition:opacity 0.2s}
 .cta:hover{opacity:0.88}
 .arrow{display:inline-block;animation:arrowBounce 1.2s infinite ease-in-out}
+
+/* attend counter */
 .attend-block{border:1px solid rgba(240,237,232,0.08);padding:24px 20px 20px;display:flex;flex-direction:column;align-items:center;gap:16px;flex-wrap:wrap}
 .attend-left{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1}
-.attend-label{font-size:24px;letter-spacing:0.1em;color:#FFD600;font-weight:700;white-space:nowrap;text-align:center}
-.attend-num{font-family:'Black Han Sans',sans-serif;font-size:clamp(64px,9vw,120px);line-height:1;color:#F0EDE8;text-align:center}
-.attend-unit{font-size:18px;color:rgba(240,237,232,0.5);letter-spacing:0.08em;margin-left:6px}
+.attend-label{font-size:29px;letter-spacing:0.1em;color:#FFD600;font-weight:700;white-space:nowrap;text-align:center}
+.attend-num{font-family:'Black Han Sans',sans-serif;font-size:clamp(69px,9vw,125px);line-height:1;color:#F0EDE8;text-align:center}
+.attend-unit{font-size:23px;color:rgba(240,237,232,0.5);letter-spacing:0.08em;margin-left:6px}
 .attend-right{display:flex;flex-direction:row;align-items:center;justify-content:flex-end;width:100%}
-.update-time{font-size:12px;color:#F0EDE8;letter-spacing:0.06em;font-weight:400}
-.footer-bar{position:relative;z-index:1;background:rgba(10,10,10,0.95);text-align:center;padding:12px 16px 14px;font-size:10px;letter-spacing:0.15em;color:rgba(240,237,232,0.5);border-top:1px solid rgba(240,237,232,0.06)}
-.ft-title{font-size:9px;color:rgba(240,237,232,0.3);letter-spacing:0.3em;display:block;margin-bottom:2px}
+.update-time{font-size:17px;color:#F0EDE8;letter-spacing:0.06em;font-weight:400}
+
+/* ── FLAME ── */
+.flame-wrap{position:relative;width:52px;height:70px;flex-shrink:0;transition:width 1.2s ease,height 1.2s ease}
+.fl{position:absolute;bottom:0;left:50%;transform:translateX(-50%);transform-origin:bottom center;border-radius:50% 50% 30% 30%/60% 60% 40% 40%;transition:width 1.2s cubic-bezier(0.34,1.56,0.64,1),height 1.2s cubic-bezier(0.34,1.56,0.64,1),opacity 1.2s ease}
+.fl-o{background:radial-gradient(ellipse at 50% 80%,#FF4500 0%,#E8000A 45%,transparent 75%);filter:blur(2.5px);animation:fd1 1.4s ease-in-out infinite alternate}
+.fl-m{background:radial-gradient(ellipse at 50% 80%,#FFD600 0%,#FF6600 55%,transparent 80%);filter:blur(1.5px);animation:fd2 1.1s ease-in-out infinite alternate}
+.fl-i{background:radial-gradient(ellipse at 50% 80%,#fff 0%,#FFE44D 55%,transparent 85%);filter:blur(0.5px);animation:fd1 0.9s ease-in-out infinite alternate-reverse}
+.fl-g{position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(ellipse,rgba(255,80,0,0.7) 0%,transparent 70%);transition:width 1.2s ease,height 1.2s ease,opacity 1.2s ease;animation:gp 1.4s ease-in-out infinite alternate}
+.attend-row{display:flex;align-items:flex-end;gap:18px}
+@keyframes fd1{from{transform:translateX(-50%) scaleX(1.0) rotate(-2deg)}to{transform:translateX(-50%) scaleX(0.87) rotate(2.5deg)}}
+@keyframes fd2{from{transform:translateX(-50%) scaleX(0.88) rotate(3deg)}to{transform:translateX(-50%) scaleX(1.1) rotate(-2deg)}}
+@keyframes gp{from{opacity:0.6;transform:translateX(-50%) scaleX(0.8)}to{opacity:1;transform:translateX(-50%) scaleX(1.3)}}
+
+/* footer */
+.footer-bar{position:relative;z-index:1;background:rgba(10,10,10,0.95);text-align:center;padding:12px 16px 14px;font-size:15px;letter-spacing:0.15em;color:rgba(240,237,232,0.5);border-top:1px solid rgba(240,237,232,0.06)}
+.ft-title{font-size:14px;color:rgba(240,237,232,0.3);letter-spacing:0.3em;display:block;margin-bottom:2px}
+
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
 @keyframes arrowBounce{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+
 @media(max-width:767px){
   .main{grid-template-columns:1fr;min-height:unset}
   .divider{display:none}
@@ -66,9 +92,11 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
 </style>
 </head>
 <body>
+
 <div class="topbar"></div>
 <div class="bgstripe"></div>
 <div class="bgglow"></div>
+
 <div class="page">
   <div class="main">
     <div class="left">
@@ -88,9 +116,20 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
     <div class="right">
       <div class="attend-block">
         <div class="attend-left">
-          <span class="attend-label">참석 예상 인원</span>
-          <div>
-            <span class="attend-num" id="attend-num">0</span><span class="attend-unit">명</span>
+          <span class="attend-label">함께 하는 동료들</span>
+          <div class="attend-row">
+            <div class="flame-wrap" id="flameWrap">
+              <div class="fl fl-o" id="flO"></div>
+              <div class="fl fl-m" id="flM"></div>
+              <div class="fl fl-i" id="flI"></div>
+              <div class="fl-g"    id="flG"></div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:flex-end;gap:6px">
+                <span class="attend-num" id="attend-num">0</span><span class="attend-unit">명</span>
+              </div>
+              <div id="flame-msg" style="font-size:11px;color:rgba(240,237,232,0.45);letter-spacing:0.08em;margin-top:4px"></div>
+            </div>
           </div>
         </div>
         <div class="attend-right">
@@ -118,47 +157,89 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
         <span class="tag hot"># 성과급 정상화</span>
         <span class="tag hot"># 인재제일 경영원칙 실현</span>
       </div>
-      <a class="cta" href="https://naver.me/5t7Zs2d8" target="_blank" rel="noopener noreferrer">
+      <a class="cta" href="https://naver.me/5t7Zs2d8" target="_blank">
         <span>설문 참여하기</span><span class="arrow">→</span>
       </a>
     </div>
   </div>
+
   <div class="footer-bar">
     <span class="ft-title">[공동투쟁본부]</span>
     초기업노동조합 삼성전자 지부 &middot; 전국삼성전자노동조합 &middot; 삼성전자노동조합(동행)
   </div>
 </div>
+
 <script>
-async function loadMainPageData() {
-  try {
-    const res = await fetch('./data/main-page.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('데이터 로드 실패');
-    const data = await res.json();
-    const attendNum = Number(data.attendNum || 0);
-    const updateTime = data.updateTime || '';
-    document.getElementById('attend-num').textContent = attendNum.toLocaleString('ko-KR');
-    document.getElementById('update-time').textContent = updateTime;
-  } catch (e) {
-    document.getElementById('attend-num').textContent = '0';
-    document.getElementById('update-time').textContent = '';
+// ── 참석 예상 인원 및 업데이트 날짜는 아래 두 변수를 직접 수정하세요 ──
+const ATTEND_NUM  = 20026;
+const UPDATE_TIME = '';
+const GOAL        = 20000;
+
+function setFlame(count) {
+  const ratio = Math.min(count / GOAL, 1);
+
+  // 불꽃 크기 — 목표 달성 시 최대: outer 200px 이상
+  const oW = 18  + ratio * 160;   // 18 ~ 178px
+  const oH = 24  + ratio * 220;   // 24 ~ 244px
+  const mW = oW  * 0.62;
+  const mH = oH  * 0.68;
+  const iW = oW  * 0.34;
+  const iH = oH  * 0.42;
+  const gW = oW  * 2.4;
+  const gH = oH  * 0.40;
+  const wW = oW  + 24;
+  const wH = oH  + 16;
+
+  const s = (id, w, h, op) => {
+    const el = document.getElementById(id);
+    el.style.width   = w + 'px';
+    el.style.height  = h + 'px';
+    el.style.opacity = op;
+  };
+  s('flO', oW, oH, 0.35 + ratio * 0.65);
+  s('flM', mW, mH, 0.45 + ratio * 0.55);
+  s('flI', iW, iH, 0.25 + ratio * 0.75);
+  s('flG', gW, gH, ratio * 0.95);
+
+  const fw = document.getElementById('flameWrap');
+  fw.style.width  = wW + 'px';
+  fw.style.height = wH + 'px';
+
+  const num = document.getElementById('attend-num');
+  const msg = document.getElementById('flame-msg');
+  num.textContent = count.toLocaleString();
+
+  if (count === 0) {
+    num.style.color = '#F0EDE8'; msg.textContent = '함께하는 동료를 기다립니다';
+  } else if (ratio < 0.1) {
+    num.style.color = '#F0EDE8'; msg.textContent = '불꽃이 피어오르기 시작합니다 🔥';
+  } else if (ratio < 0.25) {
+    num.style.color = '#FFB347'; msg.textContent = '동료들이 모이고 있습니다 🔥';
+  } else if (ratio < 0.5) {
+    num.style.color = '#FF7700'; msg.textContent = '뜨거운 연대가 타오릅니다 🔥🔥';
+  } else if (ratio < 0.75) {
+    num.style.color = '#FF3300'; msg.textContent = '거대한 불길이 일어납니다 🔥🔥🔥';
+  } else if (ratio < 1.0) {
+    num.style.color = '#FF1100'; msg.textContent = '멈출 수 없는 투쟁의 불길 🔥🔥🔥🔥';
+  } else {
+    num.style.color = '#FFD600'; msg.textContent = '우리는 하나다! 목표 달성! 🔥🔥🔥🔥🔥';
   }
 }
+
+setFlame(ATTEND_NUM);
+document.getElementById('update-time').textContent = UPDATE_TIME;
+
+// 카운트다운
 const target = new Date('2026-04-23T13:00:00+09:00');
 function tick() {
   const d = target - new Date();
-  if (d <= 0) {
-    ['days','hours','mins','secs'].forEach(id => document.getElementById(id).textContent = '00');
-    return;
-  }
-  document.getElementById('days').textContent = String(Math.floor(d / 86400000)).padStart(2, '0');
-  document.getElementById('hours').textContent = String(Math.floor((d % 86400000) / 3600000)).padStart(2, '0');
-  document.getElementById('mins').textContent = String(Math.floor((d % 3600000) / 60000)).padStart(2, '0');
-  document.getElementById('secs').textContent = String(Math.floor((d % 60000) / 1000)).padStart(2, '0');
+  if (d <= 0) { ['days','hours','mins','secs'].forEach(id => document.getElementById(id).textContent = '00'); return; }
+  document.getElementById('days').textContent   = String(Math.floor(d / 86400000)).padStart(2, '0');
+  document.getElementById('hours').textContent  = String(Math.floor((d % 86400000) / 3600000)).padStart(2, '0');
+  document.getElementById('mins').textContent   = String(Math.floor((d % 3600000) / 60000)).padStart(2, '0');
+  document.getElementById('secs').textContent   = String(Math.floor((d % 60000) / 1000)).padStart(2, '0');
 }
-loadMainPageData();
-setInterval(loadMainPageData, 30000);
-tick();
-setInterval(tick, 1000);
+tick(); setInterval(tick, 1000);
 </script>
 </body>
 </html>
