@@ -16,10 +16,14 @@
 <meta property="og:description" content="4월 23일 평택에서 함께 선다. OPI 상한 폐지와 투명한 성과급을 요구한다.">
 <meta property="og:url" content="https://www.xn--5h5bv6v.com/">
 <meta property="og:site_name" content="4.23 평택 투쟁 결의대회">
+<meta property="og:image" content="https://www.xn--5h5bv6v.com/data/1.jpg">
+<meta property="og:image:secure_url" content="https://www.xn--5h5bv6v.com/data/1.jpg">
+<meta property="og:image:type" content="image/jpeg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="4.23 평택 투쟁 결의대회">
 <meta name="twitter:description" content="4월 23일 평택에서 함께 선다. OPI 상한 폐지와 투명한 성과급을 요구한다.">
+<meta name="twitter:image" content="https://www.xn--5h5bv6v.com/data/1.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +37,41 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
 .bgglow{position:fixed;top:-15%;left:-10%;width:80%;height:50%;background:radial-gradient(ellipse at 30% 40%,rgba(232,0,10,0.13) 0%,transparent 65%);pointer-events:none;z-index:0}
 
 .page{position:relative;z-index:1;padding-top:5px}
+
+/* top fixed link */
+.site-link{
+  position:fixed;
+  top:18px;
+  right:22px;
+  z-index:101;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  color:#F0EDE8;
+  background:rgba(10,10,10,0.72);
+  border:1px solid rgba(240,237,232,0.12);
+  padding:10px 14px;
+  border-radius:999px;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.04em;
+  transition:opacity .2s ease,border-color .2s ease,transform .2s ease;
+}
+.site-link:hover{
+  opacity:.92;
+  border-color:rgba(232,0,10,0.55);
+  transform:translateY(-1px);
+}
+.site-link-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#E8000A;
+  box-shadow:0 0 10px rgba(232,0,10,0.65);
+}
 
 /* main grid */
 .main{display:grid;grid-template-columns:1fr 1px 1fr;min-height:calc(100vh - 5px)}
@@ -67,11 +106,41 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
 .demands{display:flex;flex-wrap:wrap;gap:7px}
 .tag{border:1px solid rgba(232,0,10,0.35);color:rgba(240,237,232,0.6);font-size:9px;letter-spacing:0.07em;padding:5px 11px;background:rgba(232,0,10,0.04)}
 .tag.hot{background:rgba(232,0,10,0.14);color:#F0EDE8;border-color:#E8000A}
-.cta{background:#E8000A;color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:12px;font-family:'Black Han Sans',sans-serif;font-size:clamp(14px,1.5vw,20px);letter-spacing:0.06em;clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);cursor:pointer;text-decoration:none;transition:opacity 0.2s}
+
+/* CTA */
+.cta-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:8px;
+}
+.cta{
+  background:#E8000A;
+  color:#fff;
+  padding:16px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(14px,1.5vw,20px);
+  letter-spacing:0.06em;
+  clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);
+  cursor:pointer;
+  text-decoration:none;
+  transition:opacity 0.2s;
+}
 .cta:hover{opacity:0.88}
+.cta-note{
+  text-align:center;
+  font-size:12px;
+  color:rgba(240,237,232,0.65);
+  letter-spacing:0.08em;
+  font-weight:700;
+}
 .arrow{display:inline-block;animation:arrowBounce 1.2s infinite ease-in-out}
 
-/* attend counter — sits inside right panel above info-row */
+/* attend counter */
 .attend-block{border:1px solid rgba(240,237,232,0.08);padding:24px 20px 20px;display:flex;flex-direction:column;align-items:center;gap:16px;flex-wrap:wrap}
 .attend-left{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1}
 .attend-label{font-size:24px;letter-spacing:0.1em;color:#FFD600;font-weight:700;white-space:nowrap;text-align:center}
@@ -88,12 +157,20 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
 @keyframes arrowBounce{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
 
 @media(max-width:767px){
+  .site-link{
+    top:14px;
+    right:14px;
+    padding:8px 12px;
+    font-size:12px;
+    letter-spacing:0.02em;
+  }
   .main{grid-template-columns:1fr;min-height:unset}
   .divider{display:none}
-  .left{padding:56px 28px 32px;justify-content:flex-start}
+  .left{padding:72px 28px 32px;justify-content:flex-start}
   .right{padding:24px 28px 28px;gap:14px}
   .survey-section{padding:28px 28px 32px}
   .date-hero{font-size:clamp(72px,26vw,130px)}
+  .cta-note{font-size:11px}
 }
 </style>
 </head>
@@ -102,6 +179,11 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
 <div class="topbar"></div>
 <div class="bgstripe"></div>
 <div class="bgglow"></div>
+
+<a class="site-link" href="https://www.xn--5h5bv6v.com/" target="_blank" rel="noopener noreferrer">
+  <span class="site-link-dot"></span>
+  <span>파업.com</span>
+</a>
 
 <div class="page">
   <div class="main">
@@ -131,11 +213,13 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
           <span class="update-time" id="update-time"></span>
         </div>
       </div>
+
       <div class="info-row">
         <div class="info-cell"><span class="lbl">DATE</span><span class="val">2026.04.23</span></div>
         <div class="info-cell"><span class="lbl">PLACE</span><span class="val">평택</span></div>
         <div class="info-cell"><span class="lbl">TIME</span><span class="val">오후 1시</span></div>
       </div>
+
       <div class="countdown">
         <div class="cblock"><div class="cnum" id="days">--</div><div class="cunit">DAYS</div></div>
         <div class="csep">:</div>
@@ -145,6 +229,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
         <div class="csep">:</div>
         <div class="cblock"><div class="cnum" id="secs">--</div><div class="cunit">SECS</div></div>
       </div>
+
       <div class="demands">
         <span class="tag hot"># OPI 상한(50%) 폐지</span>
         <span class="tag hot"># OPI 투명화</span>
@@ -152,9 +237,13 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
         <span class="tag hot"># 성과급 정상화</span>
         <span class="tag hot"># 인재제일 경영원칙 실현</span>
       </div>
-      <a class="cta" href="https://naver.me/5t7Zs2d8" target="_blank" rel="noopener noreferrer">
-        <span>설문 참여하기</span><span class="arrow">→</span>
-      </a>
+
+      <div class="cta-wrap">
+        <a class="cta" href="https://naver.me/5t7Zs2d8" target="_blank" rel="noopener noreferrer">
+          <span>설문 참여하기</span><span class="arrow">→</span>
+        </a>
+        <div class="cta-note">(오후2시 이후 OPEN)</div>
+      </div>
     </div>
   </div>
 
@@ -190,11 +279,9 @@ tick();
 setInterval(tick, 1000);
 </script>
 
-<!-- Cloudflare Web Analytics: 방문 통계용. 사이트 동작 필수 아님 -->
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516"
-  integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=="
-  data-cf-beacon='{"version":"2024.11.0","token":"504f0a5f1ecf41ca9f7b943f054fbbed","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-  crossorigin="anonymous"></script>
+<!-- Cloudflare Web Analytics: 이 부분은 새로 발급받은 코드로 교체 -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token":"여기에-새로-발급된-token-넣기"}'></script>
 
 </body>
 </html>
