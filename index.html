@@ -31,6 +31,121 @@
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
 
 <style>
+  .earnings-line{
+  margin-top:18px;
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  flex-wrap:wrap;
+  font-size:clamp(13px,1.15vw,18px);
+  line-height:1.5;
+  letter-spacing:.01em;
+  color:rgba(240,237,232,.72);
+}
+
+.earnings-line-label{
+  font-weight:700;
+  color:#ffffff;
+}
+
+.earnings-line-value{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(20px,2.2vw,34px);
+  line-height:1;
+  letter-spacing:-.02em;
+  color:hsl(0, 100%, 50%);
+  text-shadow:0 0 18px rgba(255,214,0,.12);
+}
+
+@media(max-width:767px){
+  .earnings-line{
+    margin-top:16px;
+    gap:8px;
+  }
+}
+/* 메일서명 만들기 아래 추가용 */
+/* 메일서명 만들기 아래 추가용 - 카드 버전 */
+.guide-shortcuts{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  margin-top:18px;
+}
+
+.guide-shortcut{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:22px 20px 20px;
+  border-radius:20px;
+  border:1px solid rgba(240,237,232,.18);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.03) 100%),
+    rgba(0,0,0,.42);
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.34),
+    inset 0 1px 0 rgba(255,255,255,.06);
+  text-decoration:none;
+  color:#F0EDE8;
+  overflow:hidden;
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    background .18s ease,
+    box-shadow .18s ease;
+}
+
+.guide-shortcut::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,#E22B1D 0%, #FF9A3D 100%);
+}
+
+.guide-shortcut::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+.guide-shortcut:hover{
+  transform:translateY(-3px);
+  border-color:rgba(226,43,29,.48);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.09) 0%, rgba(255,255,255,.04) 100%),
+    rgba(0,0,0,.52);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.42),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.guide-shortcut-title{
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:.02em;
+  color:#FFFFFF;
+}
+
+.guide-shortcut-desc{
+  font-size:13px;
+  color:rgba(240,237,232,.78);
+  line-height:1.6;
+}
+
+@media(max-width:767px){
+  .guide-shortcuts{
+    grid-template-columns:1fr;
+  }
+}
+
+
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-height:100vh}
 .topbar{height:5px;background:#E8000A;position:fixed;top:0;left:0;right:0;z-index:100}
@@ -200,6 +315,10 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
         <strong>OPI 상한 폐지</strong>와 <strong>투명한 성과급</strong>을 요구한다.<br>
         침묵이 끝나는 날 — 4월 23일, 평택.
       </p>
+<div class="earnings-line">
+  <span class="earnings-line-label">삼성전자 1분기 실적</span>
+  <span class="earnings-line-value">'57조 2000억'</span>
+</div>
     </div>
     <div class="divider"></div>
     <div class="right">
@@ -247,6 +366,18 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
           <span>메일서명 만들기</span><span class="arrow">→</span>
         </a>
       </div>
+<!-- 메일서명 만들기 아래에 추가 -->
+<div class="guide-shortcuts">
+  <a class="guide-shortcut" href="/map/">
+    <span class="guide-shortcut-title">집회장소 지도</span>
+    <span class="guide-shortcut-desc">집회장 MAP과 구역 안내 보기</span>
+  </a>
+  <a class="guide-shortcut" href="/bus/">
+    <span class="guide-shortcut-title">집회버스 배차</span>
+    <span class="guide-shortcut-desc">지역별 집결지 · 배차 시간 보기</span>
+  </a>
+</div>
+
     </div>
   </div>
 
