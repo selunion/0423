@@ -277,6 +277,103 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
 .sub{margin-top:14px;font-size:clamp(11px,0.9vw,13px);font-weight:300;color:rgba(240,237,232,0.45);letter-spacing:0.03em;line-height:2}
 .sub strong{color:#F0EDE8;font-weight:700}
 
+.live-cta-wrap{
+  margin-top:24px;
+  margin-bottom:6px;
+}
+
+.live-cta{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  width:min(100%, 620px);
+  padding:20px 24px;
+  text-decoration:none;
+  color:#FFFFFF;
+  border:1px solid rgba(255,255,255,0.12);
+  background:
+    linear-gradient(135deg, rgba(232,0,10,0.94) 0%, rgba(255,96,0,0.92) 100%),
+    rgba(232,0,10,0.9);
+  box-shadow:
+    0 18px 40px rgba(232,0,10,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+  clip-path:polygon(14px 0%,100% 0%,calc(100% - 14px) 100%,0% 100%);
+  transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+  overflow:hidden;
+}
+
+.live-cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, rgba(255,255,255,0.16), rgba(255,255,255,0));
+  mix-blend-mode:screen;
+  pointer-events:none;
+}
+
+.live-cta:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    0 24px 46px rgba(232,0,10,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.22);
+  opacity:.98;
+}
+
+.live-cta-main{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.live-cta-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:0.18em;
+  color:rgba(255,255,255,0.82);
+}
+
+.live-cta-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 12px rgba(255,255,255,0.55);
+  animation:blink 1s infinite;
+}
+
+.live-cta-title{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(24px,2.7vw,38px);
+  letter-spacing:-0.02em;
+  line-height:1.05;
+}
+
+.live-cta-sub{
+  font-size:13px;
+  font-weight:500;
+  color:rgba(255,255,255,0.8);
+  letter-spacing:0.02em;
+}
+
+.live-cta-arrow{
+  position:relative;
+  z-index:1;
+  flex:0 0 auto;
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(28px,3vw,42px);
+  line-height:1;
+  color:#fff;
+  text-shadow:0 0 18px rgba(255,255,255,0.15);
+  animation:arrowBounce 1.2s infinite ease-in-out;
+}
+
 /* right */
 .info-row{display:flex;border:1px solid rgba(240,237,232,0.08)}
 .info-cell{flex:1;padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:5px;border-right:1px solid rgba(240,237,232,0.08)}
@@ -356,6 +453,13 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
   .survey-section{padding:28px 28px 32px}
   .date-hero{font-size:clamp(72px,26vw,130px)}
   .cta-note{font-size:11px}
+  .live-cta{
+    width:100%;
+    padding:18px 18px 18px 20px;
+    gap:14px;
+  }
+  .live-cta-title{font-size:clamp(22px,7vw,30px)}
+  .live-cta-sub{font-size:12px;line-height:1.5}
 }
 </style>
 </head>
@@ -390,6 +494,16 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
     </div>
   </div>
 </div>
+      <div class="live-cta-wrap">
+        <a class="live-cta" href="https://www.youtube.com/watch?v=A9zhMKEdPQc&list=PLxMFhVl94L1XZDne_oE2mtCTX297MKylp" target="_blank" rel="noopener noreferrer">
+          <span class="live-cta-main">
+            <span class="live-cta-label"><span class="live-cta-dot"></span>YOUTUBE LIVE</span>
+            <span class="live-cta-title">유튜브 라이브 바로 가기</span>
+            <span class="live-cta-sub">현장에 못 와도 실시간으로 함께합니다</span>
+          </span>
+          <span class="live-cta-arrow">→</span>
+        </a>
+      </div>
       <p class="sub">
         우리가 만든 성과, 왜 50%에서 막히는가.<br>
         <strong>OPI 상한 폐지</strong>와 <strong>투명한 성과급</strong>을 요구한다.<br>
@@ -469,8 +583,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
 
 <script>
 // ── 참석 예상 인원 및 업데이트 날짜는 아래 두 변수를 직접 수정하세요 ──
-const ATTEND_NUM  = 38637;           // 숫자만 입력 (예: 1234)
-const UPDATE_TIME = '4월22일 14시 기준';          // 날짜 문자열 (예: '3월 16일 14:30 Update')
+const ATTEND_NUM  = 38753;           // 숫자만 입력 (예: 1234)
+const UPDATE_TIME = '4월22일 17시 기준';          // 날짜 문자열 (예: '3월 16일 14:30 Update')
 // ─────────────────────────────────────────────────────────────────────
 
 document.getElementById('attend-num').textContent  = ATTEND_NUM.toLocaleString();
