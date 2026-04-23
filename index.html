@@ -489,8 +489,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
 
   <div class="hero-schedule">
     <div class="hero-schedule-item">
-      <span class="hero-schedule-label">집회시간 :</span>
-      <span class="hero-schedule-value">14:00-16:30</span>
+      <span class="hero-schedule-label">집회</span>
+      <span class="hero-schedule-value">완료</span>
     </div>
   </div>
 </div>
@@ -518,7 +518,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
     <div class="right">
       <div class="attend-block">
         <div class="attend-left">
-          <span class="attend-label">참석 예상 인원</span>
+          <span class="attend-label">참석 인원</span>
           <div>
             <span class="attend-num" id="attend-num">0</span><span class="attend-unit">명</span>
           </div>
@@ -583,8 +583,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
 
 <script>
 // ── 참석 예상 인원 및 업데이트 날짜는 아래 두 변수를 직접 수정하세요 ──
-const ATTEND_NUM  = 39559;           // 숫자만 입력 (예: 1234)
-const UPDATE_TIME = '4월23일 10시 기준';          // 날짜 문자열 (예: '3월 16일 14:30 Update')
+const ATTEND_NUM  = 40000;           // 숫자만 입력 (예: 1234)
+const UPDATE_TIME = '경찰 추산 기준';          // 날짜 문자열 (예: '3월 16일 14:30 Update')
 // ─────────────────────────────────────────────────────────────────────
 
 document.getElementById('attend-num').textContent  = ATTEND_NUM.toLocaleString();
