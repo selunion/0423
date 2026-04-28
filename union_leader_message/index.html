@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#050505;--fg:#f2eee8;--muted:rgba(242,238,232,.65);--line:rgba(242,238,232,.10);--red:#e22b1d;--yellow:#ffd84d;--panel:#0c0c0c}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:radial-gradient(circle at 15% 0%,rgba(226,43,29,.24),transparent 24%),linear-gradient(180deg,#040404,#090909 45%,#050505);color:var(--fg);min-height:100vh;word-break:keep-all;overflow-wrap:break-word}
+a{text-decoration:none;color:inherit}.topbar{height:5px;background:linear-gradient(90deg,var(--red),#ff6a00)}
+.page{max-width:1200px;margin:0 auto;padding:22px 18px 40px}.header{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:999px;background:rgba(0,0,0,.35);font-size:13px;font-weight:700;white-space:nowrap}.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 12px rgba(226,43,29,.8)}
+.title-wrap{display:flex;flex-direction:column;gap:8px}.kicker{font-size:12px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase}.title{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(34px,7vw,66px);line-height:1.04;color:var(--fg);letter-spacing:-.02em}.sub{color:var(--muted);font-size:15px;line-height:1.7;max-width:900px}.sub strong{color:var(--fg);font-weight:900}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:14px;border:1px solid var(--line);font-weight:800;letter-spacing:.02em;background:#121212;color:var(--fg);line-height:1.25}.btn.primary{background:var(--red);border-color:var(--red);color:#fff}.btn.yellow{background:var(--yellow);border-color:var(--yellow);color:#151515}.btn.ghost:hover,.btn.primary:hover,.btn.yellow:hover{opacity:.92}
+.panel{margin-top:22px;border:1px solid var(--line);background:rgba(255,255,255,.02);padding:18px;border-radius:22px;box-shadow:0 20px 40px rgba(0,0,0,.28)}.panel-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:14px}.panel-title{font-size:22px;font-weight:900}.panel-note{font-size:13px;color:var(--muted);line-height:1.6}.image-wrap{background:#0a0a0a;border:1px solid var(--line);border-radius:18px;padding:12px;overflow:hidden}.guide-img{display:block;width:100%;height:auto;border-radius:12px}.footer{margin:32px auto 0;padding:18px 12px 6px;color:var(--muted);font-size:13px;line-height:1.8;text-align:center;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:100%;clear:both}.footer-title{display:block;font-size:11px;letter-spacing:.18em;color:rgba(242,238,232,.45);font-weight:900}.footer-orgs{display:block;letter-spacing:.04em;word-break:keep-all}.notice{margin-top:14px;padding:14px 16px;border-radius:16px;background:rgba(255,216,77,.08);border:1px solid rgba(255,216,77,.25);color:#f3e8b0;font-size:14px;line-height:1.7}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{border:1px solid var(--line);background:rgba(255,255,255,.02);padding:18px;border-radius:18px}.card h3{font-size:18px;margin-bottom:8px;color:#fff}.card p{font-size:14px;color:var(--muted);line-height:1.7}.card .num{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(32px,5vw,62px);line-height:1;color:#fff}.card .label{font-size:12px;letter-spacing:.18em;color:var(--red);font-weight:900;margin-bottom:10px;text-transform:uppercase}.card.hot{border-color:rgba(226,43,29,.45);background:linear-gradient(180deg,rgba(226,43,29,.12),rgba(255,255,255,.02))}.list{display:flex;flex-direction:column;gap:12px}.list-item{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:16px;padding:16px;background:rgba(255,255,255,.018)}.list-date{min-width:86px;font-weight:900;color:var(--yellow)}.list-body{color:var(--muted);line-height:1.7}.list-body strong{color:#fff}.video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.video-card{display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:18px;padding:18px;background:rgba(255,255,255,.02)}.video-label{display:inline-flex;width:fit-content;border:1px solid rgba(255,216,77,.3);color:var(--yellow);font-size:12px;font-weight:900;letter-spacing:.12em;padding:6px 9px;border-radius:999px}.video-title{font-size:18px;font-weight:900;line-height:1.45}.video-link{margin-top:auto;color:#fff;font-weight:900}.top-actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 0}
+@media (max-width:767px){.page{padding:16px 14px 34px}.header{align-items:flex-start}.badge{font-size:12px;padding:8px 12px}.kicker{letter-spacing:.18em}.title{font-size:clamp(32px,12vw,48px);line-height:1.08}.sub{font-size:14px}.panel{padding:14px;border-radius:18px}.grid,.grid.three,.video-grid{grid-template-columns:1fr}.btn{width:100%}.actions{width:100%}.list-item{flex-direction:column}.list-date{min-width:0}.panel-head .btn{width:100%}.card .num{font-size:46px}}@media (max-width:767px){.footer{margin-top:26px;padding:16px 8px 4px;font-size:12px;line-height:1.7}.footer-title{font-size:10px}.footer-orgs{max-width:330px}}
+</style>
+<title>위원장 담화문 | 파업.com</title>
+<meta name="description" content="4.23 투쟁 결의대회를 마치며 조합원에게 전하는 위원장 메시지입니다.">
+<link rel="canonical" href="https://www.xn--5h5bv6v.com/union_leader_message/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="위원장 담화문 | 파업.com">
+<meta property="og:description" content="4.23 투쟁 결의대회를 마치며 조합원에게 전하는 위원장 메시지입니다.">
+<meta property="og:url" content="https://www.xn--5h5bv6v.com/union_leader_message/">
+<meta property="og:image" content="https://www.xn--5h5bv6v.com/assets/union_leader_message.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="위원장 담화문 | 파업.com">
+<meta name="twitter:image" content="https://www.xn--5h5bv6v.com/assets/union_leader_message.png">
+</head>
+<body>
+<div class="topbar"></div>
+<div class="page">
+  <div class="header">
+    <div class="title-wrap">
+      <div class="kicker">UNION LEADER MESSAGE</div>
+      <div class="title">위원장 담화문</div>
+      <div class="sub">4.23 투쟁 결의대회를 마치며 조합원에게 전하는 위원장 메시지입니다.</div>
+      <div class="actions"><a class="btn ghost" href="/">메인으로</a><a class="btn primary" href="https://naver.me/GRDftjZO" target="_blank" rel="noopener noreferrer">총파업 설문 바로가기</a></div>
+    </div>
+    <a class="badge" href="/"><span class="badge-dot"></span><span>파업.com</span></a>
+  </div>
+<div class="panel">
+  <div class="panel-head"><div><div class="panel-title">위원장 담화문</div><div class="panel-note">이미지를 눌러 크게 볼 수 있습니다.</div></div><a class="btn ghost" href="/assets/union_leader_message.png" target="_blank" rel="noopener noreferrer">원본 이미지 열기</a></div>
+  <div class="image-wrap"><a href="/assets/union_leader_message.png" target="_blank" rel="noopener noreferrer"><img class="guide-img" src="/assets/union_leader_message.png" alt="위원장 담화문"></a></div>
+</div>
+<div class="footer"><span class="footer-title">[공동투쟁본부]</span><span class="footer-orgs">초기업노동조합 삼성전자 지부 · 전국삼성전자노동조합 · 삼성전자노동조합(동행)</span></div>
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"여기에-새로-발급된-token-넣기"}'></script>
+</body>
+</html>

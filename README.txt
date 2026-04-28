@@ -1,3 +1,15 @@
-1) index.html 과 data/main-page.json 을 같은 폴더 구조로 올리세요.
-2) 숫자는 data/main-page.json 파일에서 수정하세요.
-3) 30초마다 자동으로 다시 읽습니다.
+strike_site_may21_v13_folder_urls
+
+Upload all files/folders in this folder to the site root.
+
+URLs after upload:
+/
+/directive2/
+/union_leader_message/
+/video_archive/
+/strike_plan/
+/press_release/
+/signature/
+/signature/guide.html
+
+Signature files are copied as provided and were not modified.
