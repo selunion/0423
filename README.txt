@@ -1,15 +1,3 @@
-strike_site_may21_v13_folder_urls
-
-Upload all files/folders in this folder to the site root.
-
-URLs after upload:
-/
-/directive2/
-/union_leader_message/
-/video_archive/
-/strike_plan/
-/press_release/
-/signature/
-/signature/guide.html
-
-Signature files are copied as provided and were not modified.
+Upload all files and folders in this package to the GitHub Pages publishing root.
+Important: Keep the root CNAME file. It contains www.xn--5h5bv6v.com and prevents GitHub Pages custom-domain 404.
+Do not delete the signature folder if you want to preserve the email signature tool.
