@@ -6,7 +6,7 @@ compatibility_date = "2025-01-01"
 [vars]
 GITHUB_OWNER = "selunion"
 GITHUB_REPO = "0423"
-GITHUB_BRANCH = "test-strike-count"
+GITHUB_BRANCH = "main"
 COUNT_FILE_PATH = "data/strike_count.json"
 SITE_URL = "https://www.xn--5h5bv6v.com"
 TELEGRAM_ADMIN_IDS = "2114452669,1360331328"
