@@ -247,13 +247,13 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
     <div class="right">
       <div class="attend-block">
         <div class="attend-left">
-          <span class="attend-label">4.23 경찰 추산 참가 인원</span>
+          <span class="attend-label">총파업 참가 인원</span>
           <div>
-            <span class="attend-num" id="attend-num">40,000</span><span class="attend-unit">명</span>
+            <span class="attend-num" id="attend-num">0</span><span class="attend-unit">명</span>
           </div>
         </div>
         <div class="attend-right">
-          <span class="update-time" id="update-time">평택 투쟁 결의대회 · 경찰 추산 기준</span>
+          <span class="update-time" id="update-time">총파업 설문 시작 전</span>
         </div>
       </div>
 
@@ -311,6 +311,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0A0A0A;color:#F0EDE8;min-
 <script>
 const STRIKE_START = new Date('2026-05-21T00:00:00+09:00');
 const STRIKE_END = new Date('2026-06-07T23:59:59+09:00');
+const STRIKE_COUNT_DATA_URL = '/data/strike_count.json';
+const STRIKE_COUNT_REFRESH_MS = 30000;
 function setCountdown(ms){
   const days=Math.floor(ms/86400000);
   const hours=Math.floor((ms%86400000)/3600000);
@@ -328,7 +330,43 @@ function tick(){
   if(now<=STRIKE_END){title.textContent='총파업 진행 중 · 종료까지';setCountdown(STRIKE_END-now);return;}
   title.textContent='총파업 기간 종료';setCountdown(0);
 }
+
+function getCountCacheKey(){
+  return Math.floor(Date.now() / STRIKE_COUNT_REFRESH_MS);
+}
+
+function formatCountUpdateText(data){
+  if(data && typeof data.updatedText === 'string' && data.updatedText.trim()) return data.updatedText.trim();
+  if(data && data.updatedAt){
+    try{
+      const d = new Date(data.updatedAt);
+      return d.toLocaleString('ko-KR', {
+        timeZone:'Asia/Seoul',
+        year:'numeric', month:'2-digit', day:'2-digit',
+        hour:'2-digit', minute:'2-digit', hour12:false
+      }) + ' 기준';
+    }catch(e){}
+  }
+  return '텔레그램 업데이트 대기';
+}
+
+async function loadStrikeCount(){
+  try{
+    const res = await fetch(STRIKE_COUNT_DATA_URL + '?v=' + getCountCacheKey(), {cache:'no-store'});
+    if(!res.ok) throw new Error('count_fetch_failed');
+    const data = await res.json();
+    const count = Number(data.count);
+    if(Number.isFinite(count) && count >= 0){
+      document.getElementById('attend-num').textContent = Math.floor(count).toLocaleString('ko-KR');
+      document.getElementById('update-time').textContent = formatCountUpdateText(data);
+    }
+  }catch(e){
+    document.getElementById('update-time').textContent = '참가 인원 데이터 확인 중';
+  }
+}
+
 tick();setInterval(tick,1000);
+loadStrikeCount();setInterval(loadStrikeCount, STRIKE_COUNT_REFRESH_MS);
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"여기에-새로-발급된-token-넣기"}'></script>
 
