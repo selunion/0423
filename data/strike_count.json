@@ -1,6 +1,11 @@
 {
-  "count": 32000,
-  "updatedAt": "2026-04-28T14:30:00+09:00",
-  "updatedText": "테스트 기준",
-  "source": "local-test"
+  "count": 32001,
+  "updatedAt": "2026-04-30T06:53:11.257Z",
+  "updatedText": "2026. 04. 30. 15:53 기준",
+  "source": "telegram",
+  "updatedBy": {
+    "id": 2114452669,
+    "username": "shbshb99",
+    "name": "현범 신"
+  }
 }
