@@ -1,416 +1,168 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>파업.com | 메일 서명 만들기</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="color-scheme" content="dark">
+<title>잠정합의안 가결 · 사이트 운영 종료 | 파업.com</title>
+<meta name="description" content="잠정합의안 가결에 따라 파업.com 운영을 종료합니다.">
+<link rel="canonical" href="https://www.xn--5h5bv6v.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="잠정합의안 가결 · 사이트 운영 종료 | 파업.com">
+<meta property="og:description" content="잠정합의안 가결에 따라 파업.com 운영을 종료합니다.">
+<meta property="og:url" content="https://www.xn--5h5bv6v.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="잠정합의안 가결 · 사이트 운영 종료 | 파업.com">
+<meta name="twitter:description" content="잠정합의안 가결에 따라 파업.com 운영을 종료합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:"Malgun Gothic",Arial,sans-serif;background:#0f0f0f;color:#f3f3f3}
-.wrap{display:grid;grid-template-columns:470px 1fr;min-height:100vh}
-.panel{padding:20px;border-right:1px solid #262626;background:#151515;overflow:auto}
-.preview{padding:24px;background:#0c0c0c;overflow:auto}
-h1{margin:0;font-size:28px;font-weight:800}
-.group{margin-bottom:16px;padding:14px;border:1px solid #2a2a2a;border-radius:12px;background:#1a1a1a}
-.group h2{margin:0 0 12px;font-size:15px}
-label{display:block;margin:10px 0 6px;font-size:13px;color:#d7d7d7}
-input,textarea{width:100%;border:1px solid #393939;background:#101010;color:#fff;border-radius:10px;padding:10px 12px;font-size:14px}
-textarea{min-height:180px;resize:vertical;line-height:1.5}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-button,.btn-link{border:0;border-radius:10px;padding:11px 14px;font-size:14px;cursor:pointer;color:#fff;background:#b30000;margin-right:8px;margin-top:8px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
-button.secondary,.btn-link.secondary{background:#333}
-button.dark,.btn-link.dark{background:#202020;border:1px solid #444}
-.canvasWrap{background:#151515;border:1px solid #242424;border-radius:16px;padding:16px;display:inline-block;width:100%}
-canvas{max-width:100%;height:auto;border-radius:8px;background:#000;box-shadow:0 8px 30px rgba(0,0,0,.35);display:block}
-.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:12px}
-.titlebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.badge{font-size:12px;color:#ffcf87;background:rgba(179,0,0,.12);border:1px solid rgba(255,190,110,.18);padding:6px 10px;border-radius:999px;white-space:nowrap}
-.muted{margin-top:10px;color:#b1b1b1;font-size:12px;line-height:1.5}
-.previewActions{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
-@media (max-width:1160px){.wrap{grid-template-columns:1fr}.panel{border-right:0;border-bottom:1px solid #262626}}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0A0A0A;
+  --fg:#F0EDE8;
+  --muted:rgba(240,237,232,.62);
+  --line:rgba(240,237,232,.12);
+  --red:#E8000A;
+  --yellow:#FFD600;
+  --panel:rgba(255,255,255,.035);
+}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  font-family:'Noto Sans KR',sans-serif;
+  color:var(--fg);
+  background:#0A0A0A;
+  word-break:keep-all;
+  overflow-x:hidden;
+}
+.topbar{height:5px;background:#E8000A;position:fixed;top:0;left:0;right:0;z-index:20}
+.bgstripe{position:fixed;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 80px,rgba(232,0,10,.035) 80px,rgba(232,0,10,.035) 82px);pointer-events:none;z-index:0}
+.bgglow{position:fixed;top:-18%;left:-10%;width:88%;height:56%;background:radial-gradient(ellipse at 30% 40%,rgba(232,0,10,.18) 0%,transparent 66%);pointer-events:none;z-index:0}
+.bgglow.second{top:auto;left:auto;right:-18%;bottom:-22%;background:radial-gradient(ellipse at 60% 40%,rgba(255,214,0,.07) 0%,transparent 64%)}
+.page{position:relative;z-index:1;min-height:100vh;display:grid;grid-template-rows:1fr auto;padding-top:5px}
+.main{display:grid;grid-template-columns:1.05fr 1px .95fr;min-height:calc(100vh - 5px)}
+.divider{background:rgba(240,237,232,.08)}
+.left,.right{display:flex;flex-direction:column;justify-content:center;padding:clamp(52px,9vh,96px) clamp(30px,6vw,80px)}
+.right{gap:18px}
+.org{font-size:11px;letter-spacing:.3em;color:rgba(240,237,232,.58);margin-bottom:16px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#E8000A;color:#fff;font-size:9px;font-weight:900;letter-spacing:.3em;padding:5px 14px;margin-bottom:18px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);width:fit-content}
+.dot{width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 10px rgba(255,255,255,.55)}
+.date-hero{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(66px,10.5vw,154px);line-height:.88;letter-spacing:-.035em}
+.date-hero .red{color:var(--red)}
+.date-hero .dim{color:rgba(240,237,232,.13)}
+.rule{width:100%;height:2px;background:linear-gradient(90deg,#E8000A 42%,transparent);margin:18px 0 14px}
+.kicker{font-size:clamp(13px,1.2vw,18px);color:rgba(240,237,232,.74);letter-spacing:.06em;margin-bottom:10px}
+.headline{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(31px,4vw,66px);line-height:1.12;letter-spacing:-.02em;max-width:820px}
+.headline .accent{color:var(--yellow)}
+.sub{margin-top:18px;font-size:clamp(13px,1vw,16px);font-weight:300;color:rgba(240,237,232,.64);letter-spacing:.02em;line-height:1.9;max-width:760px}
+.sub strong{color:#fff;font-weight:900}
+.close-line{margin-top:26px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;color:rgba(240,237,232,.72)}
+.close-line-label{font-weight:900;color:#fff;font-size:clamp(13px,1.1vw,18px)}
+.close-line-value{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(24px,2.8vw,42px);line-height:1;color:#fff;letter-spacing:-.02em}
+.status-panel{border:1px solid rgba(240,237,232,.1);background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));padding:26px 24px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:13px;box-shadow:0 22px 50px rgba(0,0,0,.28)}
+.status-label{font-size:13px;letter-spacing:.22em;color:var(--yellow);font-weight:900}
+.status-title{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(46px,6.4vw,94px);line-height:1;color:#F0EDE8;letter-spacing:-.025em}
+.status-desc{font-size:14px;line-height:1.75;color:rgba(240,237,232,.66);max-width:560px}
+.info-row{display:flex;border:1px solid rgba(240,237,232,.08)}
+.info-cell{flex:1;padding:15px 10px;display:flex;flex-direction:column;align-items:center;gap:7px;border-right:1px solid rgba(240,237,232,.08);min-width:0;text-align:center}
+.info-cell:last-child{border-right:none}
+.lbl{font-size:12px;letter-spacing:.22em;color:var(--red);text-transform:uppercase;font-weight:900;text-align:center}
+.val{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(18px,1.9vw,30px);line-height:1.12;text-align:center;color:#fff}
+.notice{border:1px solid rgba(255,214,0,.22);background:rgba(255,214,0,.055);padding:18px 20px;color:rgba(240,237,232,.75);font-size:14px;line-height:1.8}
+.notice strong{color:#fff;font-weight:900}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{border:1px solid rgba(232,0,10,.36);background:rgba(232,0,10,.08);color:rgba(240,237,232,.76);font-size:10px;font-weight:800;letter-spacing:.07em;padding:6px 11px}
+.footer-bar{position:relative;z-index:1;background:rgba(10,10,10,.95);text-align:center;padding:14px 18px 16px;font-size:10px;letter-spacing:.12em;color:rgba(240,237,232,.48);border-top:1px solid rgba(240,237,232,.06);line-height:1.7}
+.ft-title{font-size:9px;color:rgba(240,237,232,.32);letter-spacing:.3em;display:block;margin-bottom:2px}
+@media(max-width:980px){
+  .main{grid-template-columns:1fr;min-height:auto}
+  .divider{display:none}
+  .left{padding:76px 28px 34px;justify-content:flex-start}
+  .right{padding:24px 28px 34px;justify-content:flex-start;gap:14px}
+  .date-hero{font-size:clamp(66px,23vw,120px)}
+  .headline{font-size:clamp(30px,9vw,48px)}
+  .status-title{font-size:clamp(42px,15vw,78px)}
+  .info-row{flex-direction:column}
+  .info-cell{border-right:none;border-bottom:1px solid rgba(240,237,232,.08)}
+  .info-cell:last-child{border-bottom:none}
+}
+@media(max-width:520px){
+  .left{padding-left:24px;padding-right:24px}
+  .right{padding-left:24px;padding-right:24px}
+  .org{letter-spacing:.18em;line-height:1.6}
+  .badge{letter-spacing:.2em}
+  .status-panel{padding:22px 18px}
+  .notice{padding:16px}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="panel">
-    <div class="topbar">
-      <div class="titlebar">
-        <h1>메일 서명 만들기</h1>
-        <div class="badge">파업.com</div>
+<div class="topbar"></div>
+<div class="bgstripe"></div>
+<div class="bgglow"></div>
+<div class="bgglow second"></div>
+<div class="page">
+  <main class="main">
+    <section class="left">
+      <div class="org">2026년 임금교섭 공동투쟁본부</div>
+      <div class="badge"><span class="dot"></span>SITE CLOSED</div>
+      <div class="date-hero">CLOSE</div>
+      <div class="rule"></div>
+      <div class="kicker">파업.com 운영 종료 안내</div>
+      <h1 class="headline">잠정합의안 <br><span class="accent">가결</span></h1>
+      <p class="sub">
+        파업.com은 총파업 참여 인원 집계와 쟁의 관련 안내를 위해 운영되었습니다.<br>
+        <strong>잠정합의안 가결</strong>에 따라 본 사이트의 운영을 종료합니다.<br>
+        그동안 함께해주신 조합원 여러분께 감사드립니다.
+      </p>
+      <div class="close-line">
+        <span class="close-line-label">운영 상태</span>
+        <span class="close-line-value">CLOSED</span>
       </div>
-      <div><button type="button" class="secondary" onclick="window.open('./guide.html','_blank')">설명서</button></div>
-    </div>
+    </section>
 
-    <div class="group">
-      <h2>서명 원문</h2>
-      <textarea id="sourceText" placeholder="회사 메일 서명 또는 회사 정보 화면 내용을 그대로 붙여넣으세요."></textarea>
-      <button type="button" class="secondary" onclick="extractFields()">자동 추출</button>
-    </div>
+    <div class="divider"></div>
 
-    <div class="group">
-      <h2>정보</h2>
-      <div class="row">
-        <div><label for="name">이름</label><input id="name" value="" /></div>
-        <div><label for="phone">휴대폰</label><input id="phone" value="" /></div>
+    <section class="right" aria-label="운영 종료 상태">
+      <div class="status-panel">
+        <div class="status-label">RESULT</div>
+        <div class="status-title">가결</div>
+        <p class="status-desc">
+          공동투쟁본부의 쟁의 안내 및 참여 집계 페이지는 역할을 마치고 닫힙니다.
+          향후 공식 안내는 각 노동조합의 공식 채널을 통해 확인해 주시기 바랍니다.
+        </p>
       </div>
-      <label for="work">담당업무</label><input id="work" value="" />
-      <div class="row">
-        <div><label for="dept">부서/조직</label><input id="dept" value="" /></div>
-        <div><label for="position">직급/직책</label><input id="position" value="" /></div>
-      </div>
-      <div class="row">
-        <div><label for="companyPhone">회사전화</label><input id="companyPhone" value="" /></div>
-        <div><label for="fax">팩스</label><input id="fax" value="" /></div>
-      </div>
-      <div class="row">
-        <div><label for="email">이메일</label><input id="email" value="" /></div>
-        <div><label for="homepage">회사홈페이지</label><input id="homepage" value="" /></div>
-      </div>
-      <label for="company">회사명</label><input id="company" value="" />
-    </div>
 
-    <div class="group">
-      <h2>출력</h2>
-      <div class="row">
-        <div><label for="widthInput">가로(px)</label><input id="widthInput" type="number" value="400" min="300" max="5000" /></div>
-        <div><label for="heightInput">세로(px)</label><input id="heightInput" type="number" value="140" min="100" max="5000" /></div>
+      <div class="info-row">
+        <div class="info-cell"><span class="lbl">STATUS</span><span class="val">운영 종료</span></div>
+        <div class="info-cell"><span class="lbl">RESULT</span><span class="val">잠정합의안 가결</span></div>
+        <div class="info-cell"><span class="lbl">SITE</span><span class="val">파업.com</span></div>
       </div>
-      <button type="button" onclick="renderSignature()">미리보기 갱신</button>
-      <a id="downloadBtn" class="btn-link secondary" href="#" download="signature_user.png">PNG 저장</a>
-      <button type="button" class="dark" onclick="copyImage()">이미지 복사</button>
-    </div>
-  </div>
 
-  <div class="preview">
-    <div class="canvasWrap">
-      <canvas id="sigCanvas" width="400" height="140"></canvas>
-      <div class="previewActions">
-        <button type="button" class="secondary" onclick="openImageInNewTab()">이미지 새 탭 열기</button>
+      <div class="notice">
+        <strong>안내</strong><br>
+        기존 설문, 총파업 안내, 영상 모음, 투쟁지침, 메일서명 등 사이트 내 기능과 자료 페이지는 운영 종료에 따라 더 이상 제공하지 않습니다.
       </div>
-    </div>
-  </div>
+
+      <div class="tags">
+        <span class="tag"># 잠정합의안 가결</span>
+        <span class="tag"># 사이트 운영 종료</span>
+        <span class="tag"># 공동투쟁본부</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-bar">
+    <span class="ft-title">[공동투쟁본부]</span>
+    초기업노동조합 삼성전자 지부 &middot; 전국삼성전자노동조합 &middot; 삼성전자노동조합(동행)
+  </footer>
 </div>
-
-<script>
-const FIXED_LINES = ["상한폐지 실현하자","투명하게 바꾸자","제도화 하자"];
-const bgImg = new Image();
-bgImg.src = "./assets/background.png";
-
-function $(id){ return document.getElementById(id); }
-
-function normalizeText(text){
-  return (text || "").replace(/\r/g,"").replace(/\u00A0/g," ").replace(/[ \t]+/g," ");
-}
-
-function normalizeLines(text){
-  return normalizeText(text)
-    .replace(/M\.\s*(\+?82[0-9.\- ]+)/g,"\nM. $1\n")
-    .replace(/F\.\s*(\+?82[0-9.\- ]+)/g,"\nF. $1\n")
-    .split(/\n+/).map(v=>v.trim()).filter(Boolean);
-}
-
-function wrapText(ctx,text,x,y,maxWidth,lineHeight,maxLines){
-  if(!text) return 0;
-  const words = text.split(/\s+/);
-  let line = "";
-  const lines = [];
-  for(let i=0;i<words.length;i++){
-    const testLine = line ? line + " " + words[i] : words[i];
-    if(ctx.measureText(testLine).width > maxWidth && line){
-      lines.push(line);
-      line = words[i];
-      if(maxLines && lines.length >= maxLines) break;
-    } else {
-      line = testLine;
-    }
-  }
-  if(line && (!maxLines || lines.length < maxLines)) lines.push(line);
-  lines.forEach((ln,idx)=>ctx.fillText(ln,x,y+idx*lineHeight));
-  return lines.length;
-}
-
-function cleanValue(v){
-  return (v || "").trim().replace(/^[:：]\s*/,"");
-}
-
-function getFieldBlock(raw,label){
-  const lines = raw.split(/\n/);
-  let start = -1;
-  for(let i=0;i<lines.length;i++){
-    if(lines[i].includes(label)){ start = i; break; }
-  }
-  if(start === -1) return "";
-  const collected = [];
-  for(let i=start;i<lines.length;i++){
-    const line = lines[i].trim();
-    if(i===start){
-      const after = line.replace(new RegExp("^.*?" + label + "\\s*[:：]?\\s*"),"").trim();
-      if(after) collected.push(after);
-      continue;
-    }
-    if(!line) break;
-    if(/^(회사주소|세부위치|연락처|이메일|회사전화 ?1|회사전화|휴대폰 ?1|휴대폰|인터넷전화|팩스|회사홈페이지|비밀번호 찾기 인증 연락처|외부메일|공유정보|담당업무|선호언어|영문정보|이름|중간이름|성|표현이름|회사|부서|직급명)$/i.test(line)) break;
-    collected.push(line);
-  }
-  return cleanValue(collected.join(" "));
-}
-
-function findLabeledValue(raw,label){
-  const block = getFieldBlock(raw,label);
-  if(block) return block;
-  const re = new RegExp(label + "\\s*[:：]?\\s*(.+)","i");
-  const m = raw.match(re);
-  return m ? cleanValue(m[1].split("\n")[0]) : "";
-}
-
-function extractFirstPhone(raw,labels){
-  for(const label of labels){
-    const value = findLabeledValue(raw,label);
-    if(value) return value;
-  }
-  return "";
-}
-
-function normalizePhone(v){
-  let s = (v || "").trim();
-  if(!s) return "";
-  s = s.replace(/\s+/g,"").replace(/-/g,".").replace(/\.\./g,".");
-  return s;
-}
-
-function extractWorkFromSignature(lines){
-  const filtered = lines.filter(v => !/노동조합|노조|지부|위원장|국장/.test(v));
-  const explicit = filtered.find(v => /【.*】/.test(v) || /\[Tech\]|\[Task\]|HPC|Public Cloud|인프라 설계|설계 및 운영|운영\(/i.test(v));
-  if(explicit) return explicit.replace(/,$/,"").trim();
-  return "";
-}
-
-function extractFields(){
-  const raw = $("sourceText").value || "";
-  const text = normalizeText(raw);
-  const lines = normalizeLines(raw);
-
-  const email = findLabeledValue(text,"이메일") || (text.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)||[])[0] || "";
-  const companyPhone = extractFirstPhone(text,["회사전화 1","회사전화","인터넷전화"]);
-  const fax = findLabeledValue(text,"팩스");
-  const homepage = findLabeledValue(text,"회사홈페이지");
-  const work = getFieldBlock(raw,"담당업무") || extractWorkFromSignature(lines);
-  const dept = findLabeledValue(text,"부서") || lines.find(v => /그룹|센터|본부|팀|실\)|실$|파트|담당/i.test(v) && !/노동조합|노조|지부|위원장|국장/.test(v)) || "";
-  const position = findLabeledValue(text,"직급명") || findLabeledValue(text,"직책") || "";
-  const company = findLabeledValue(text,"회사") || lines.find(v => /^삼성전자$|Samsung Electronics|삼성전자협력사|전자파트너/i.test(v)) || "";
-  const name = lines.find(v => /^[가-힣]{2,5}$/.test(v)) || findLabeledValue(text,"이름") || "";
-
-  let mobile = extractFirstPhone(text,["휴대폰 1","휴대폰"]);
-  if(!mobile){
-    const phoneMatches = text.match(/(\+?82[.\- ]?)?0?1[016789][0-9.\- ]{7,}/g) || [];
-    if(phoneMatches.length) mobile = phoneMatches[0];
-  }
-
-  $("name").value = cleanValue(name);
-  $("phone").value = normalizePhone(mobile);
-  $("work").value = cleanValue(work);
-  $("dept").value = cleanValue(dept);
-  $("position").value = cleanValue(position);
-  $("companyPhone").value = normalizePhone(companyPhone);
-  $("fax").value = normalizePhone(fax);
-  $("email").value = cleanValue(email);
-  $("homepage").value = cleanValue(homepage || "www.samsung.com");
-  $("company").value = cleanValue(company);
-
-  renderSignature();
-}
-
-let latestDataUrl = "";
-
-function updateDownloadLink(){
-  const link = $("downloadBtn");
-  const fileName = "signature_" + (($("name").value || "user").replace(/[^a-zA-Z0-9_-]/g,"_") || "user") + ".png";
-  link.href = latestDataUrl;
-  link.download = fileName;
-}
-
-function dataURLToBlob(dataURL){
-  const parts = dataURL.split(",");
-  const mime = parts[0].match(/:(.*?);/)[1];
-  const binary = atob(parts[1]);
-  const len = binary.length;
-  const bytes = new Uint8Array(len);
-  for(let i=0;i<len;i++) bytes[i] = binary.charCodeAt(i);
-  return new Blob([bytes], {type:mime});
-}
-
-function updateFromCanvas(){
-  const canvas = $("sigCanvas");
-  latestDataUrl = canvas.toDataURL("image/png");
-  updateDownloadLink();
-}
-
-function renderSignature(){
-  const canvas = $("sigCanvas");
-  const ctx = canvas.getContext("2d");
-  const w = parseInt($("widthInput").value || 400, 10);
-  const h = parseInt($("heightInput").value || 140, 10);
-  canvas.width = w;
-  canvas.height = h;
-
-  const nameSize = 18;
-  const labelSize = 10;
-  const rightSize = 15;
-  const lineHeight = 14;
-  const rightLineGap = 30;
-  const left = 12;
-  const top = 10;
-  const rightX = Math.round(w * 0.52);
-  const leftWidth = Math.max(140, Math.round(w * 0.40));
-
-  const name = $("name").value.trim();
-  const phone = $("phone").value.trim();
-  const work = $("work").value.trim();
-  const dept = $("dept").value.trim();
-  const position = $("position").value.trim();
-  const companyPhone = $("companyPhone").value.trim();
-  const fax = $("fax").value.trim();
-  const company = $("company").value.trim();
-  const email = $("email").value.trim();
-  const homepage = $("homepage").value.trim();
-
-  ctx.clearRect(0,0,w,h);
-if (bgImg.complete && bgImg.naturalWidth > 0) {
-  const imgRatio = bgImg.width / bgImg.height;
-  const canvasRatio = w / h;
-
-  let drawWidth, drawHeight, offsetX, offsetY;
-
-  if (imgRatio > canvasRatio) {
-    drawHeight = h;
-    drawWidth = h * imgRatio;
-    offsetX = (w - drawWidth) / 2;
-    offsetY = 0;
-  } else {
-    drawWidth = w;
-    drawHeight = w / imgRatio;
-    offsetX = 0;
-    offsetY = (h - drawHeight) / 2;
-  }
-
-ctx.drawImage(bgImg, offsetX, offsetY, drawWidth, drawHeight);
-
-// 밝기 보정 (핵심)
-ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
-ctx.fillRect(0, 0, w, h);
-} else {
-  ctx.fillStyle = "#000000";
-  ctx.fillRect(0,0,w,h);
-}
-
-  ctx.fillStyle = "#ffb64f";
-  ctx.fillRect(left, top, 4, h - 20);
-
-  ctx.fillStyle = "#ffffff";
-  ctx.font = "bold " + nameSize + "px Malgun Gothic, Arial, sans-serif";
-  ctx.fillText(name || "", left + 10, top + nameSize);
-
-  let y = top + nameSize + 20;
-  if(position){
-    ctx.fillStyle = "#ffd59d";
-    ctx.font = "bold 10px Malgun Gothic, Arial, sans-serif";
-    ctx.fillText(position, left + 10, y);
-    y += 16;
-  }
-
-  ctx.fillStyle = "#f0f0f0";
-  ctx.font = labelSize + "px Malgun Gothic, Arial, sans-serif";
-  const leftLines = [
-    work,
-    dept,
-    company,
-    companyPhone ? ("T. " + companyPhone) : "",
-    phone ? ("M. " + phone) : "",
-    fax ? ("F. " + fax) : "",
-    email,
-    homepage
-  ].filter(Boolean);
-
-  for(const line of leftLines){
-    const used = wrapText(ctx, line, left + 10, y, leftWidth, lineHeight, 2);
-    y += Math.max(1, used) * lineHeight + 2;
-    if(y > h - 8) break;
-  }
-
-  ctx.fillStyle = "#fff2d0";
-  ctx.font = "bold " + rightSize + "px Malgun Gothic, Arial, sans-serif";
-  let ry = top + 26;
-  FIXED_LINES.forEach(line => {
-    ctx.fillText(line, rightX + 10, ry);
-    ry += rightLineGap;
-  });
-
-  updateFromCanvas();
-}
-
-function copyRichImageFallback(){
-  const box = document.createElement("div");
-  box.contentEditable = "true";
-  box.style.position = "fixed";
-  box.style.left = "-9999px";
-  box.style.top = "0";
-  box.innerHTML = '<img src="' + latestDataUrl + '" alt="signature" />';
-  document.body.appendChild(box);
-  const range = document.createRange();
-  range.selectNodeContents(box);
-  const sel = window.getSelection();
-  sel.removeAllRanges();
-  sel.addRange(range);
-  box.focus();
-  let ok = false;
-  try{ ok = document.execCommand("copy"); } catch(e){ ok = false; }
-  sel.removeAllRanges();
-  document.body.removeChild(box);
-  return ok;
-}
-
-async function copyImage(){
-  try{
-    if(!latestDataUrl) updateFromCanvas();
-    const blob = dataURLToBlob(latestDataUrl);
-    if(navigator.clipboard && window.ClipboardItem){
-      await navigator.clipboard.write([new ClipboardItem({"image/png": blob})]);
-      alert("이미지가 복사되었습니다.");
-      return;
-    }
-    const ok = copyRichImageFallback();
-    if(ok){
-      alert("이미지가 복사되었습니다.");
-      return;
-    }
-    throw new Error("copy_failed");
-  } catch(e){
-    const ok = copyRichImageFallback();
-    if(ok){
-      alert("이미지가 복사되었습니다.");
-      return;
-    }
-    alert("이미지 복사에 실패했습니다. PNG 저장 또는 이미지 새 탭 열기를 사용하세요.");
-  }
-}
-
-function openImageInNewTab(){
-  if(!latestDataUrl) updateFromCanvas();
-  const w = window.open();
-  if(!w){
-    alert("새 탭 열기가 차단되었습니다. 브라우저 팝업 차단을 확인하세요.");
-    return;
-  }
-  w.document.write('<title>Signature PNG</title><img src="' + latestDataUrl + '" style="max-width:100%;height:auto;display:block;margin:0 auto;background:#111;">');
-  w.document.close();
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-  renderSignature();
-  if (!bgImg.complete) bgImg.onload = renderSignature;
-});
-</script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"504f0a5f1ecf41ca9f7b943f054fbbed","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
